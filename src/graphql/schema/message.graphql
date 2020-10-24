@@ -6,6 +6,7 @@ type Message {
   image: String
   createAt: Date!
   from: Sender!
+  roomName: String
 }
 
 input MessageInput {

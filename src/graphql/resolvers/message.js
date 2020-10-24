@@ -18,6 +18,7 @@ export default {
         body,
         createAt: new Date(),
         from,
+        roomName,
       };
       await Message(roomName).create(data);
       await pubsub.publish(NEW_MESSAGE, { newMessage: data });
