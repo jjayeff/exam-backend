@@ -1,3 +1,7 @@
 type Sender {
+  name: String!
+}
+
+input SenderInput {
   name: String
 }
