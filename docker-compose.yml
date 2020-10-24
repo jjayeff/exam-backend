@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  chat-px-api:
+    container_name: chat-px-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 4000:4000
+    environment:
+      - MONGO_DB_URL=mongodb://mongo:27017/docker-node-mongo
+    restart: unless-stopped
+    external_links:
+      - mong
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
