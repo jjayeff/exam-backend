@@ -14,14 +14,6 @@ const server = new ApolloServer({
     ${typeDefs}
   `,
   resolvers,
-  subscriptions: {
-    onConnect: (connectionParams, webSocket, context) => {
-      console.log('connect');
-    },
-    onDisconnect: (webSocket, context) => {
-      console.log('disconnect');
-    },
-  },
 });
 
 server.listen().then(({ url }) => {
