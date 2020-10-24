@@ -13,13 +13,14 @@ export default {
   Mutation: {
     sendMessage: async (parent, { roomName, input }) => {
       const { body, from } = input;
-      await Message(roomName).create({
+      const data = {
         id: uuid_v4(),
         body,
         createAt: new Date(),
         from,
-      });
-      await pubsub.publish(NEW_MESSAGE, { newMessage: roomName });
+      };
+      await Message(roomName).create(data);
+      await pubsub.publish(NEW_MESSAGE, { newMessage: data });
       return {
         successful: true,
       };
