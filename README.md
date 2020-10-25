@@ -1,5 +1,22 @@
 # Proxumer - Backend Developer Interview Question
 
+## Quick Start
+
+```bash
+1. git clone
+git clone https://github.com/jjayeff/exam-backend.git 
+
+2. yarn or npm install
+
+3. require('dotenv').config() in to src/index.js
+
+4. create .env follow .env.example
+*example
+MONGO_DB_URL=mongodb://mongo:27017/docker-node-mongo
+
+5. yarn start or npm start
+```
+
 Task: GraphQL-powered Chatroom
 
 ### Time limit: 3 hours
